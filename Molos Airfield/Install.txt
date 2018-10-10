@@ -1,16 +1,16 @@
 *******************************************************
-	"Molos Invasion" BETA static mission for Altis.
+	"Molos Airfield" BETA static mission for Altis.
 	Created by Cloudskipper using templates by eraser1 
 *******************************************************
 	For Altis only.
 	Running on DMS System
 *******************************************************
-	"Molos Invasion" is multi difficulties with chance of persistent vehicle with ground AI patrols and AI heli.
+	"Molos Airfield" is multi difficulties with chance of persistent vehicle with ground AI patrols and AI heli.
 *******************************************************
 
 Installing.
-1. 	Copy molos_siege.sqf into a3_dms.pbo missions/static
-2. 	Copy molos_sige_buildings.sqf into a3_dms.pbo objects/static
+1. 	Copy molos_airfield.sqf into a3_dms.pbo missions/static
+2. 	Copy molos_airfield_buildings.sqf into a3_dms.pbo objects/static
 
 >>>>>>>>Either<<<<<<<<<<<
 3. 	Extract  map_configs/altis_config.sqf
@@ -19,7 +19,7 @@ Installing.
 // Add the "Molos Invasion" mission to the existing mission types.
 
 DMS_StaticMissionTypes append 
-[["molos_siege",1]];
+[["molos_airfield",1]];
 
 *******************************************************
 DO NOT ADD THE BUILDINGS - they are called on mission spawn.
