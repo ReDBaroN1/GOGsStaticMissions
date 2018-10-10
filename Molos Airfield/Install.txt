@@ -1,53 +1,57 @@
 *******************************************************
-	"Molos Airfield" BETA static mission for Altis.
+	"Molos Airfield" static mission for Altis.
+	Thanks to BaroN for helping debug and test.
 	Created by Cloudskipper using templates by eraser1 
 *******************************************************
 	For Altis only.
 	Running on DMS System
-*******************************************************
-	"Molos Airfield" is multi difficulties with chance of persistent vehicle with ground AI patrols and AI heli.
+	v2.1 is multi difficulties with lots of editable functions.
 *******************************************************
 
 Installing.
 1. 	Copy molos_airfield.sqf into a3_dms.pbo missions/static
-2. 	Copy molos_airfield_buildings.sqf into a3_dms.pbo objects/static
+2. 	Copy molos airfield_buildings.sqf into a3_dms.pbo objects/static
 
 >>>>>>>>Either<<<<<<<<<<<
 3. 	Extract  map_configs/altis_config.sqf
 4.	Add to end
 
-// Add the "Molos Invasion" mission to the existing mission types.
-
+// Add the "molos_airfield" mission to the existing mission types.
 DMS_StaticMissionTypes append 
 [["molos_airfield",1]];
 
-*******************************************************
-DO NOT ADD THE BUILDINGS - they are called on mission spawn.
-*******************************************************
+// Add the "molos_airfield_buildings" to spawn on server startup. NOTE: "append" and "pushback" are NOT the same.
+DMS_BasesToImportOnServerStart append ["molos_airfield_buildings"];
 
 5.	Repack altis_config.sqf	into PBO
 
 >>>>>>>>OR<<<<<<<<<<<<<<
 Edit main DMS config.sqf
+
 6.	Find
-	DMS_StaticMissionTypes =			[							// List of STATIC missions with spawn chances.
-											//["saltflats",1],		//<--Example (already imported by default on Altis)
-											//["slums",1]			//<--Example (already imported by default on Altis)
+	DMS_StaticMissionTypes =		[							
+
+// List of STATIC missions with spawn chances.
+//["saltflats",1],		//<--Example (already imported by default on Altis)
+//["slums",1]			//<--Example (already imported by default on Altis)
 										];
 
-	DMS_BasesToImportOnServerStart = 	[							// List of static bases to import on server startup (spawned post-init). This will reduce the amount of work the server has to do when it actually spawns static missions, and players won't be surprised when a base suddenly pops up. You can also include any other M3E-exported bases to spawn here.
-											//"saltflatsbase",		//<--Example (already imported by default on Altis)
-											//"slums_objects"		//<--Example (already imported by default on Altis)
-											// DO NOT ADD THE BUILDINGS - they are called on mission spawn.
+	DMS_BasesToImportOnServerStart = 	[
+// List of static bases to import on server startup (spawned post-init). This will reduce the amount of work the server has to do when it actually spawns static missions, and players won't be surprised when a base suddenly pops up. You can also include any other M3E-exported bases to spawn here.
+
+//"saltflatsbase",		//<--Example (already imported by default on Altis)
+//"slums_objects"		//<--Example (already imported by default on Altis)
 										];
 replace with
 
 	DMS_StaticMissionTypes =			[
-											["molos_siege",1]
+	
+["molos_airfield",1]
 										];
 
 	DMS_BasesToImportOnServerStart = 	[
-											// DO NOT ADD THE BUILDINGS - they are called on mission spawn.
+	
+"molos_airfield_buildings"
 										];
 										
 7. Save and repack config into PBO
