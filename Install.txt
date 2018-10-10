@@ -10,7 +10,7 @@
 
 Installing.
 1. 	Copy molos_siege.sqf into a3_dms.pbo missions/static
-2. 	Copy molos_sige_buildings.sqf into a3_dms.pbo objects/static
+2. 	Copy molos_siege_buildings.sqf into a3_dms.pbo objects/static
 
 >>>>>>>>Either<<<<<<<<<<<
 3. 	Extract  map_configs/altis_config.sqf
